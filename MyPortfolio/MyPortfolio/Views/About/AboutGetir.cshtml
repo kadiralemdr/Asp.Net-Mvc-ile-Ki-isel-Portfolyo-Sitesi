@@ -1,0 +1,41 @@
+﻿@using MyPortfolio.Models.Entities
+@model List<AboutTop>
+
+@{
+    ViewBag.Title = "AboutGetir";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Ben Kimim</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Ad Soyad</th>
+        <th>Yaş</th>
+        <th>Şehir</th>
+        <th>Mail</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AboutTopID</td>
+            <td>@item.AdSoyad</td>
+            <td>@item.Age</td>
+            <td>@item.Sehir</td>
+            <td>@item.Mail</td>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td><a href="/About/AboutGuncelle/@item.AboutTopID" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+
+</table>
+<br />
+<h3>Diğer İşlemler</h3>
+<p><a href="/About/GetAboutSkill" class="btn btn-dark">Yeteneklerim <i class="fa fa-chevron-circle-right"></i></a></p>
+<p><a href="/About/Achievement" class="btn btn-dark">Sertifikalarım <i class="fa fa-chevron-circle-right"></i></a></p>
+<p><a href="/Project/Index" class="btn btn-dark">Projelerim <i class="fa fa-chevron-circle-right"></i></a></p>
+

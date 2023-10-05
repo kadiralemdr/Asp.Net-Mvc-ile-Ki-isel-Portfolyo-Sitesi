@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Get";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Admin İşlemleri</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kullanıcı Adı</th>
+        <th>Şifre</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AdminID</td>
+            <td>@item.Username</td>
+            <td>@item.Password</td>
+            <td><a href="/AdminSil/@item.AdminID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Login/AdminGuncelle/@item.AdminID" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Login/AdminEkle" class="btn btn-info">Yeni Admin Ekle</a>

@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Gelen Kutusu</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Gönderen</th>
+        <th>Konu</th>
+        <th>Sil</th>
+        <th>Mesajı Aç</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MessageID</td>
+            <td>@item.SenderMail</td>
+            <td>@item.MessageSubject</td>
+            <td><a href="/Message/MessageDelete/@item.MessageID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Message/MessageDetails/@item.MessageID" class="btn btn-outline-primary">Mesajı Aç</a></td>
+        </tr>
+    }
+</table>

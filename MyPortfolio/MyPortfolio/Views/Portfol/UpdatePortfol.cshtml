@@ -1,0 +1,24 @@
+﻿@model MyPortfolio.Models.Entities.Portfol
+@{
+    ViewBag.Title = "UpdatePortfol";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Ben Kimim(ilk alan) Güncelleme Sayfası</h2>
+<form method="post">
+    @Html.HiddenFor(x => x.PortfolID)
+    @Html.Label("Ad Soyad")
+    @Html.TextBoxFor(x => x.AdSoyad, new { @class = "form-control" })
+    <br />
+    @Html.Label("Meslek")
+    @Html.TextBoxFor(x => x.Meslek, new { @class = "form-control" })
+    <br />
+    @Html.Label("Açıklama")
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    @Html.Label("Resim")
+    @Html.TextBoxFor(x => x.ImageURL, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-warning">Güncelle</button>
+</form>
+

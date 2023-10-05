@@ -1,0 +1,19 @@
+﻿@model MyPortfolio.Models.Entities.Achievement
+@{
+    ViewBag.Title = "AchievementGuncelle";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Sertifika Güncelleme Sayfası</h2>
+<br />
+<form method="post">
+    @Html.HiddenFor(x => x.AchievementID)
+    @Html.Label("Başlık")
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    @Html.Label("Açıklama")
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-warning">Sertifikayı Güncelle</button>
+</form>
+

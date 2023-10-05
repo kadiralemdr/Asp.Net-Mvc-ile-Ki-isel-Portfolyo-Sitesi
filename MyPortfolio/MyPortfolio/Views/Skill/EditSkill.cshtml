@@ -1,0 +1,15 @@
+﻿@model MyPortfolio.Models.Entities.Skill
+@{
+    ViewBag.Title = "EditSkill";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Yetenek Sayfası Düzenle</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.SkillID)
+    <label>Yetenek Adı</label>
+    @Html.TextBoxFor(x => x.SkillName, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info"> Kaydet</button>
+</form>

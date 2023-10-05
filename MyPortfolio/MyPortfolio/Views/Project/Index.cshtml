@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Proje Listesi</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Proje Adı</th>
+        <th>Proje İçeriği</th>
+        <th>Proje Tarihi</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProjectID</td>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td>@item.Tarih.ToString("dd.MM.yyyy")</td>
+            <td><a href="/Project/DeleteProject/@item.ProjectID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Project/UpdateProject/@item.ProjectID" class="btn btn-outline-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/About/AboutGetir/" class="btn btn-danger">Geri Dön <i class="fa fa-rotate-left"></i></a>
+<a href="/Project/AddProject" class="btn btn-outline-primary">Yeni Proje Girişi</a>
+
+

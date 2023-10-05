@@ -1,0 +1,19 @@
+﻿@model MyPortfolio.Models.Entities.SkillDegree
+
+@{
+    ViewBag.Title = "UpdateAboutScill";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Yetenek Barı Güncelleme Sayfası</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.SkillDegreeID)
+    <label>Yetenek Adı</label>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    <label>Yetenek Oranı (%100)</label>
+    @Html.TextBoxFor(x => x.Degree, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info"> Kaydet</button>
+</form>

@@ -1,0 +1,15 @@
+﻿@model MyPortfolio.Models.Entities.Blog
+<div class="content-form">
+    <h3>Bir Yorum Yapın</h3>
+    <form method="post" class="form-group">
+        <input type="hidden" placeholder="ID" name="Blogid" value="@ViewBag.deger" required />
+        <br />
+        <input class="form-control" type="text" placeholder="Kullanıcı Adı" name="KullaniciAdi" required />
+        <br />
+        <input class="form-control" type="text" placeholder="Mail Adresi" name="Mail" required />
+        <br />
+        <textarea class="form-control" placeholder="Yorum" name="Yorum"></textarea>
+        <br />
+        <input class="btn btn-primary" type="submit" value="Gönder" />
+    </form>
+</div>

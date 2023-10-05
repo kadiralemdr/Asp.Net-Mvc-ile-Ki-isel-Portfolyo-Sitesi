@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+@Html.Action("PartialHead", "Portfolio")
+<body>
+    @Html.Action("PartialNavbar", "Portfolio")
+    <section class="w3l-about-breadcrumb text-center">
+        <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
+            <div class="container py-2">
+                <h2 class="title">Bloglar</h2>
+                <ul class="breadcrumbs-custom-path mt-2">
+                    <li><a href="~/Portfolio/Index">Anasayfa</a></li>
+                    <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span>Bloglar</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="container col-md-12">
+        <div class="row">
+            <div class="col-md-4">
+                @Html.Action("PartialSolBlog")
+            </div>
+            <div class="col-md-8">
+                @Html.Action("PartialOrtaBlog")
+            </div>
+        </div>
+    </div>
+    @Html.Action("PartialFooter", "Portfolio")
+    @Html.Action("PartialScript", "Portfolio")
+</body>
+</html>

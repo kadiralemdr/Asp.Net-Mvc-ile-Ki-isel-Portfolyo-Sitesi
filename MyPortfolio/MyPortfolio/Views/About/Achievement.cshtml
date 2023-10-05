@@ -1,0 +1,28 @@
+﻿@model List<MyPortfolio.Models.Entities.Achievement>
+@{
+    ViewBag.Title = "Achievement";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Sertikalarım</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Alındığı Kurum</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AchievementID</td>
+            <td>@item.Title</td>
+            <td>@(item.Description.Length > 180 ? item.Description.Substring(0, 180) + "..." : item.Description)</td>
+            <td><a href="/About/AchievementSil/@item.AchievementID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/About/AchievementGuncelle/@item.AchievementID" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/About/AboutGetir/" class="btn btn-danger">Geri Dön <i class="fa fa-rotate-left"></i></a>
+<a href="/About/AchievementEkle" class="btn btn-info">Yeni Sertifika Ekle</a>

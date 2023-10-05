@@ -1,0 +1,25 @@
+﻿@model MyPortfolio.Models.Entities.Service
+@{
+    ViewBag.Title = "UpdateService";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Neler Yapabilirim Güncelleme Sayfası</h2>
+<form method="post">
+    @Html.HiddenFor(x => x.ServiceID)
+    @Html.Label("Başlık")
+    @Html.TextBoxFor(x => x.ServiceTitle, new { @class = "form-control" })
+    <br />
+    @*@Html.Label("Hizmet İkonu")
+        @Html.TextBoxFor(x => x.ServiceIcon, new { @class = "form-control" })
+        <br />*@
+    @Html.Label("Açıklama")
+    @Html.TextBoxFor(x => x.ServiceContent, new { @class = "form-control" })
+    <br />
+    @Html.Label("Hizmet Numarası")
+    @Html.TextBoxFor(x => x.ServiceNumber, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-warning">İçeriği Güncelle</button>
+</form>
+
+

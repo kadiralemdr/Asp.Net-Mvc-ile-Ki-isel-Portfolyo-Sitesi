@@ -1,0 +1,101 @@
+﻿@model MyPortfolio.Models.Entities.BlogYorum
+@{
+    Layout = null;
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Single :: w3layouts</title>
+    <link href="~/web2/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/web2/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!----webfonts---->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <!----//webfonts---->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--end slider -->
+    <!--script-->
+    <!---->
+    @Html.Action("PartialHead", "Portfolio")
+</head>
+<body>
+    @Html.Action("PartialNavbar", "Portfolio")
+    <!---header---->
+    <div class="header">
+    </div>
+    <!--/header-->
+    <section class="w3l-about-breadcrumb text-center">
+        <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
+            <div class="container py-2">
+                @foreach (var x in Model.Deger1)
+                {
+                    <h2 class="title">@x.Title</h2>
+                }
+                    <ul class="breadcrumbs-custom-path mt-2">
+                        <li><a href="~/Portfolio/Index">Anasayfa</a></li>
+                        <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span><a href="/Blog/Index">Blog</a></li>
+                        <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span>Blog Detayları</li>
+                    </ul>
+                </div>
+        </div>
+    </section>
+    <section class="w3l-about-breadcrumb text-center" style="height: 100%;">
+        <section class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4" style="text-align:left;">
+            <div class="container">
+                <div class="row col-md-12">
+                    <div class="col-md-12 single-main">
+                        <div class="single-grid">
+                            @foreach (var x in Model.Deger1)
+                            {
+                                <h2>@x.Title</h2>
+                                <br />
+                                <p>
+                                    @x.Description
+                                </p>
+                                <img src="@x.ImageURL" alt="" width="500" height="250" style="margin-bottom:20px; margin-top:20px; border-radius:10px;" />
+                                <p style="font-size:10px;">@x.Tarih</p>
+                                <br />
+                            }
+                        </div>
+
+                        @foreach (var y in Model.Deger2)
+                        {
+                            <ul class="comment-list" style="background-color:white; color:black; border-radius:10px; padding:20px; margin-bottom:10px;">
+                                <li>
+                                    <img src="~/Templates/alexander-starter/assets/images/avatar.png" width="30" height="30" style="border-radius:50px;" class="img-responsive" alt="">
+                                    <div class="desc">
+                                        <p>@y.KullaniciAdi : @y.Yorum </p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </li>
+                            </ul>
+                        }
+                        <br />
+                        @Html.Action("YorumYap", "Blog")
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <!---->
+    @Html.Action("PartialFooter", "Portfolio")
+    @Html.Action("PartialScript", "Portfolio")
+</body>
+</html>
+
+
+
+
+

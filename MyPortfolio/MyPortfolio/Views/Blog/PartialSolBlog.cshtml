@@ -1,0 +1,26 @@
+﻿@using MyPortfolio.Models.Entities
+@model List<Blog>
+<section class="w3l-about-breadcrumb text-center">
+    <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4" style="text-align:left;">
+        <div class="container py-2">
+            <div class="padding">
+                <h2>Tüm Bloglar</h2>
+                <br />
+                <ul class="list list-pad">
+                    @{ int i = 0;}
+                    @foreach (var x in Model)
+                    {
+                        <li class="list-bg"><span>@{i++;} @i- </span><a href="/Blog/BlogDetay/@x.BlogID">@x.Title</a></li>
+                    }
+                </ul>
+                @*<ul class="list list-pad">
+                    @foreach (var item in Model)
+                    {
+                        <li class="list-bg"><span>@item.BlogID- </span><a href="#">@item.Title</a></li>
+                    }
+                </ul>*@
+                @*<a href="#" class="link1">Tüm Bloglar</a>*@
+            </div>
+        </div>
+    </div>
+</section>

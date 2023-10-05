@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "GetAboutSkill";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Yeteneklerim Sayfası</h2>
+
+
+<table class="table table-bordered" style="text-align:center">
+    <tr style="background-color:darkslategray; color:white;">
+        <th>Yetenek Adı</th>
+        <th>Oran (%100)</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Degree</td>
+            <td><a href="/About/UpdateAboutScill/@item.SkillDegreeID/" class="btn btn-warning ; align-center">Güncelle</a></td>
+            <td><a href="/About/DeleteAboutSkill/@item.SkillDegreeID/" class="btn btn-danger ; align-center">Sil</a></td>
+
+        </tr>
+    }
+</table>
+<a href="/About/AboutGetir/" class="btn btn-danger">Geri Dön <i class="fa fa-rotate-left"></i></a>
+<a href="/About/AddAboutSkill/" class="btn btn-secondary ; align-center">Yetenek Ekle</a>
+
+

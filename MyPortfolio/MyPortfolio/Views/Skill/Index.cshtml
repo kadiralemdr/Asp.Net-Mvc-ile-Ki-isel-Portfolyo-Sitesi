@@ -1,0 +1,23 @@
+﻿@model List<MyPortfolio.Models.Entities.Skill>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Yetenek-Kayan Yazı Sayfası</h2>
+
+
+<table class="table table-bordered">
+    <tr style="background-color:burlywood ;text-align:center">
+        <th>Yetenek Adı</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr style="text-align:center">
+            <td>@item.SkillName</td>
+            <td><a href="/Skill/EditSkill/@item.SkillID" class="btn btn-warning ; align-center">Yetenek Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Portfol/Index/" class="btn btn-danger">Geri Dön <i class="fa fa-rotate-left"></i></a>

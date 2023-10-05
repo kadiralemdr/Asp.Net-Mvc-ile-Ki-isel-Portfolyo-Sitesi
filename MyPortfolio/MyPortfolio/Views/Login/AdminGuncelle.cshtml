@@ -1,0 +1,22 @@
+﻿@model MyPortfolio.Models.Entities.Admin
+@{
+    ViewBag.Title = "AdminGuncelle";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Admin Güncelleme Sayfası</h2>
+<br />
+<form method="post">
+    @Html.HiddenFor(x => x.AdminID)
+    @Html.Label("Kullanıcı Adı")
+    @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
+    <br />
+    @Html.Label("Şifre")
+    @Html.TextAreaFor(x => x.Password, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-warning">Admin Güncelle</button>
+</form>
+
+
+
+

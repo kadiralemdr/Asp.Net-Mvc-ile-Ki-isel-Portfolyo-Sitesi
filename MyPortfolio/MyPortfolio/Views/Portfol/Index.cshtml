@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Ben Kimim(İlk Alan)</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Ad Soyad</th>
+        <th>Meslek</th>
+        <th>Açıklama</th>
+        <th>Resim</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.PortfolID</td>
+            <td>@item.AdSoyad</td>
+            <td>@item.Meslek</td>
+            <td>@item.Description</td>
+            <td>@item.ImageURL</td>
+            <td><a href="/Portfol/UpdatePortfol/@item.PortfolID" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+
+</table>
+<br />
+<h3>Diğer İşlemler</h3>
+<p><a href="/Skill/Index/" class="btn btn-dark">Anasayfa Kayan Yazı Sayfası <i class="fa fa-chevron-circle-right"></i></a></p>
+<p><a href="/WhoAmI/Index" class="btn btn-dark">Cv Açıklaması <i class="fa fa-chevron-circle-right"></i></a></p>
+<p><a href="/Service/Index" class="btn btn-dark">Neler Yapabilirim <i class="fa fa-chevron-circle-right"></i></a></p>

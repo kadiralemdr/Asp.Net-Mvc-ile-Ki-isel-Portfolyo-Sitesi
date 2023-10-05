@@ -1,0 +1,24 @@
+﻿@model MyPortfolio.Models.Entities.Social
+
+@{
+    ViewBag.Title = "AddSocial";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Proje Ekleme Sayfası</h2>
+<form method="post">
+    @Html.HiddenFor(x => x.SocialMediaID)
+    @Html.Label("Sosyal Medya Adı")
+    @Html.TextBoxFor(x => x.SocialMediaName, new { @class = "form-control" })
+    <br />
+    @Html.Label("İkon")
+    @Html.TextBoxFor(x => x.SocialMediaIcon, new { @class = "form-control", placeholder = "Örnek: fa fa-linkedin-square" })
+    <br />
+    @Html.Label("Link")
+    @Html.TextBoxFor(x => x.SocialMediaUrl, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Kaydet</button>
+</form>
+
+
+

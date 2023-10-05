@@ -1,0 +1,45 @@
+﻿@model MyPortfolio.Models.Entities.Message
+@{
+    ViewBag.Title = "MessageDetails";
+    Layout = "~/Views/Shared/_PortfolioAdminLayout.cshtml";
+}
+
+<h2>Mesaj Detayları</h2>
+    @*Konu: @Html.DisplayFor(x => x.MessageSubject)
+    <br />
+    Gönderen: @Html.LabelFor(x => x.NameSurname)
+    <br />
+    Mail Adresi: @Html.LabelFor(x => x.SenderMail)
+    <br />
+    Mesaj: @Html.LabelFor(x => x.Content)*@
+
+
+
+<div class="card card-primary card-outline">
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+        <div class="mailbox-read-info" style="padding:10px;">
+            <h6 class="text-primary">Gönderen</h6>
+            <h6>
+                @Html.DisplayFor(x => x.SenderMail)
+                <br />
+                <span>@Html.DisplayFor(x => x.NameSurname)</span>
+            </h6>
+            <hr />
+        </div>
+        <div class="mailbox-read-message" style="padding:10px;">
+            <h6 class="text-primary">Konu</h6>
+            <p>@Html.DisplayFor(x => x.MessageSubject)</p>
+
+            <p>
+                <hr />
+                <h6 class="text-primary">İçerik</h6>
+                @Html.DisplayFor(x => x.Content)
+            </p>
+        </div>
+    </div>
+</div>
+<br />
+<a href="/Message/Index/" class="btn btn-danger">Geri Dön</a>
+
+
